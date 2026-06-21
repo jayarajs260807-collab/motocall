@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moto Call — Scan. Call. Move. | Vehicle QR Code Contact Service</title>
+  <meta name="description" content="Moto Call lets you scan a QR code on any vehicle to instantly contact the owner — securely and privately. No app needed. Get your QR sticker today." />
+  <meta name="keywords" content="Moto Call, vehicle QR code, contact car owner, parking contact, QR sticker, vehicle blocking solution, scan and call" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Moto Call — Scan. Call. Move." />
+  <meta property="og:description" content="Scan a QR code on any vehicle to instantly contact the owner — securely and privately. No app needed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://motocall.netlify.app" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Moto Call — Scan. Call. Move." />
+  <meta name="twitter:description" content="Scan a QR code on any vehicle to instantly contact the owner — securely and privately." />
+  <link rel="canonical" href="https://motocall.netlify.app" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Moto Call",
+    "url": "https://motocall.netlify.app",
+    "description": "Vehicle QR code contact service. Scan a QR code to instantly contact the vehicle owner — securely and privately.",
+    "foundingDate": "2025",
+    "founder": { "@type": "Person", "name": "Jayaraj S" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      background: #000;
+      border-bottom: 1px solid rgba(40,167,69,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #28A745;
+    }
+    .logo-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 32px; }
+    nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #d1d5db;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #28A745; }
+
+    /* Hero */
+    #home {
+      background: #000;
+      padding: 96px 24px;
+      text-align: center;
+    }
+    .hero-inner { max-width: 768px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(40,167,69,0.1);
+      border: 1px solid rgba(40,167,69,0.3);
+      color: #28A745;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    h1 span { color: #28A745; }
+    .hero-sub {
+      font-size: 1.25rem;
+      color: #9ca3af;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #28A745;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.125rem;
+      padding: 16px 40px;
+      border-radius: 9999px;
+      transition: background 0.2s;
+      box-shadow: 0 10px 30px rgba(40,167,69,0.3);
+    }
+    .btn-primary:hover { background: #218838; }
+
+    /* Features */
+    #features {
+      background: #0a0a0a;
+      padding: 80px 24px;
+    }
+    .section-inner { max-width: 1152px; margin: 0 auto; }
+    h2 {
+      font-size: clamp(1.875rem, 4vw, 2.25rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    h2 span { color: #28A745; }
+    .section-sub {
+      color: #9ca3af;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #000;
+      border: 1px solid rgba(40,167,69,0.2);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: rgba(40,167,69,0.6); }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .feature-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #28A745;
+      margin-bottom: 8px;
+    }
+    .feature-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
+
+    /* How It Works */
+    #how-it-works {
+      background: #000;
+      padding: 80px 24px;
+    }
+    .steps-inner { max-width: 896px; margin: 0 auto; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 32px;
+    }
+    .step { text-align: center; }
+    .step-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(40,167,69,0.1);
+      border: 2px solid #28A745;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step-num {
+      color: #28A745;
+      font-weight: 900;
+      font-size: 0.875rem;
+    }
+    .step-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .step-desc { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
+
+    /* Contact */
+    #contact {
+      background: #0a0a0a;
+      padding: 80px 24px;
+    }
+    .contact-inner { max-width: 576px; margin: 0 auto; text-align: center; }
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #000;
+      border: 1px solid rgba(40,167,69,0.3);
+      border-radius: 12px;
+      padding: 16px 24px;
+      transition: border-color 0.2s;
+      color: #fff;
+    }
+    .contact-card:hover { border-color: #28A745; }
+    .contact-icon { font-size: 1.5rem; }
+    .contact-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .contact-value { color: #28A745; font-weight: 600; }
+
+    /* Footer */
+    footer {
+      background: #000;
+      border-top: 1px solid rgba(40,167,69,0.2);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-logo { font-size: 1.5rem; font-weight: 900; color: #28A745; margin-bottom: 4px; }
+    .footer-tagline {
+      font-size: 0.75rem;
+      color: #6b7280;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-copy { color: #6b7280; font-size: 0.875rem; margin-bottom: 4px; }
+    .footer-credits { color: #4b5563; font-size: 0.75rem; }
+    .footer-heart { color: #4b5563; font-size: 0.75rem; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="logo-name">Moto Call</div>
+        <div class="logo-tagline">Scan. Call. Move.</div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-badge">Vehicle QR Code Contact Service</div>
+      <h1>Vehicle Blocking <br /><span>Your Way?</span></h1>
+      <p class="hero-sub">Scan QR &amp; Contact Owner Instantly — Secure &amp; Private</p>
+      <a href="#how-it-works" class="btn-primary">Get Your QR Sticker</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="section-inner">
+      <h2>Why Choose <span>Moto Call?</span></h2>
+      <p class="section-sub">Everything you need for seamless vehicle contact</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <div class="feature-title">QR Code</div>
+          <p class="feature-desc">Unique QR sticker for every vehicle. Scan instantly from any smartphone — no app needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <div class="feature-title">Call Owner</div>
+          <p class="feature-desc">Connect directly with the vehicle owner in seconds. Quick, simple, and reliable.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚨</div>
+          <div class="feature-title">Emergency</div>
+          <p class="feature-desc">Share emergency alerts or notifications tied to your parked vehicle instantly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">Privacy</div>
+          <p class="feature-desc">Your personal number stays hidden. We route calls securely without exposing your identity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works">
+    <div class="steps-inner">
+      <h2>How It <span>Works</span></h2>
+      <p class="section-sub">Four simple steps to never block anyone again</p>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-circle"><span class="step-num">01</span></div>
+          <div class="step-title">Register Vehicle</div>
+          <p class="step-desc">Sign up and add your vehicle details to the Moto Call platform.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><span class="step-num">02</span></div>
+          <div class="step-title">Get QR Code</div>
+          <p class="step-desc">Receive your unique, tamper-proof QR sticker for your vehicle.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><span class="step-num">03</span></div>
+          <div class="step-title">Stick It On</div>
+          <p class="step-desc">Place the sticker on your windscreen or bumper — visible to all.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><span class="step-num">04</span></div>
+          <div class="step-title">Scan &amp; Call</div>
+          <p class="step-desc">Anyone who needs you scans the QR and connects instantly — privately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-inner">
+      <h2>Get In <span>Touch</span></h2>
+      <p class="section-sub" style="margin-bottom:0">Have questions or want to place a bulk order? Reach out to us.</p>
+      <div class="contact-cards">
+        <a href="mailto:hello@motocall.app" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">hello@motocall.app</div>
+          </div>
+        </a>
+        <a href="tel:+911234567890" class="contact-card">
+          <span class="contact-icon">📞</span>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+91 12345 67890</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Moto Call</div>
+    <div class="footer-tagline">Scan. Call. Move.</div>
+    <p class="footer-copy">&copy; 2026 Moto Call. All rights reserved.</p>
+    <p class="footer-credits">Founded by the Co-Founders Pratham Hutagi, Samarath</p>
+    <p class="footer-heart">Built with ❤️ to keep roads moving</p>
+  </footer>
+
+</body>
+</html>
